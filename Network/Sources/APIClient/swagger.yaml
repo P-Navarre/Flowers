@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Flowers API
+
+servers:
+  - url: https://storage.googleapis.com/pnavarre-flowers
+
+paths:
+  /categories:
+    get:
+      description: List of categories
+      responses:
+        '200':
+          description: Successfully returned a list of artists
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CategoryDTO'
+
+  /items:
+    get:
+      description: List of flower items
+      responses:
+        '200':
+          description: Successfully returned the list of flowers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FlowerItemDTO'
+    
+components:
+ schemas:
+    CategoryDTO:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+        name:
+            type: string
+
+    FlowerItemDTO:
+      type: object
+      required:
+        - id
+        - category
+        - title
+      properties:
+        id:
+          type: string
+          format: uuid
+        category:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        imageUrlSmall:
+          type: string
+        imageUrlFull:
+          type: string

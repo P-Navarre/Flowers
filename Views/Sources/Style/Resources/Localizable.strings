@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+
+  Pierre Navarre
+  
+*/
+
+// ErrorView
+"Load_Error_Message" = "Une erreur s'est produite\n\nMerci de vérifier votre connexion et réessayer plus tard";
+"Load_Retry_Button" = "Réessayer";
+
+// DetailView
+"Detail_ID" = "ID: ";
